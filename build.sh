@@ -5,5 +5,5 @@ EXTERN="sdl_component.c physic.c"
 COMPILER_FLAGS="-lm"
 LIB_SDL="-lSDL2 -lSDL2_ttf"
 FILE="game.c"
-OUTPUT="game"
+OUTPUT="Linux.bin"
 $CC -v $FILE -o $OUTPUT $EXTERN $COMPILER_FLAGS $LIB_SDL
