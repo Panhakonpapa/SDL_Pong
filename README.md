@@ -1,4 +1,4 @@
-SDL-Pong
+# SDL-Pong
 
 SDL-Pong is a modern recreation of the iconic 1970s Pong game, written in C using SDL2. This project is designed as a learning tool to grasp the basics of programming and game development.
 🎮 About the Project
