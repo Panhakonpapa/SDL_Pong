@@ -17,11 +17,11 @@ The goal of **SDL-Pong** is to create a faithful remake of the original Pong whi
 
 ### Prerequisites
 - **SDL2**: Simple DirectMedia Layer (SDL) is required for rendering and event handling. You can install it on most platforms:
-
-```bash
+### Set Up 
+``` LINUX
 # For Linux
 sudo apt-get install libsdl2-dev
-
+``` MACOS
 # For macOS (using Homebrew)
 brew install sdl2
 
