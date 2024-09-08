@@ -22,18 +22,18 @@ The goal of **SDL-Pong** is to create a faithful remake of the original Pong whi
 Clone the repository:
 
 ```bash
-git clone 
+git clone https://github.com/Panhakonpapa/SDL-Pong.git
 cd SDL-Pong
 ./build.sh
 ./SDL_Pong
-
-🎮 How to Play
+```
+### 🎮 How to Play
 
     Player 1 uses the W and S keys to move the paddle up and down.
     Player 2 uses the Up Arrow and Down Arrow keys to move their paddle.
     The game starts automatically; the ball bounces between the paddles, and players try to score by getting the ball past their opponent.
 
-📝 Credits
+### 📝 Credits
 
 Created by Panha, Visal as a high school project to explore the basics of programming and game development.
 
