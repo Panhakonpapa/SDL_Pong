@@ -1,0 +1,14 @@
+[x] Refacter the code base graphic.c -> sdl_component.c 
+[x] Import Collision to -> physic.c 
+[x] Add the puck movement to the game 
+[x] Add game state 
+[x] Add pixel fonts 
+[x] Add Docementatin 
+[x] Fixing renew Code base in sdl component 
+[x] Finish the game Demo 
+[x] A wait file for Sal 
+[] Add Ai 
+[] Walk through the code what do we learn 
+[] add texture 
+[] Build a make file test 
+
