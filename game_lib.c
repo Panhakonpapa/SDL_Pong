@@ -32,7 +32,6 @@ void update_position(Game_Objcet* move,  float speed, float* angle) {
 	move->sdl_rect.y += (int)new_y;   
 
 	if (move->sdl_rect.y <= 0 || move->sdl_rect.y + move->sdl_rect.h >= WINDOW_W) {
-		printf("pong hit window");
 		*angle = -(*angle); 
 	}
 	
