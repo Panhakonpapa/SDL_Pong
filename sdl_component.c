@@ -1,6 +1,4 @@
 #include "sdl_component.h"
-
-
 void print_debug(char* stringErrorMessages)
 {	
 	printf("Error ->%s -> results output %s", stringErrorMessages, SDL_GetError()); 	
@@ -31,8 +29,24 @@ SDL_Renderer* SDL_Create_Renderer(SDL_Window* window) {
 	return renderer; 
 }
 
-#include "physic.h" 
-int SDL_Handle_Input(SDL_Event e, Game_Objcet* objcet) {
+void SDL_Display_TTF(int x, int y, int w, int h, TTF_Font* openFont, SDL_Renderer* renderer, int* p1, int* p2) {
+	SDL_Rect rectangle; 
+	    rectangle.x = x;
+	    rectangle.y = y;  
+	    rectangle.w = w;
+	    rectangle.h = h;
+
+	char score[20];
+	sprintf(score, "%d      %d", *p1, *p2); 
+	SDL_Color textColor = {255, 255, 255, 255}; 
+	SDL_Surface* surfaceText = TTF_RenderText_Solid(openFont, score , textColor);
+	SDL_Texture* textureText = SDL_CreateTextureFromSurface(renderer,surfaceText);
+	SDL_FreeSurface(surfaceText);  
+	SDL_RenderCopy(renderer ,textureText, NULL, &rectangle);
+	
+}
+#include "game_lib.h" 
+int SDL_Handle_Input(SDL_Event e, Game_Objcet* objcet1, Game_Objcet* objcet2) {
 
 	while (SDL_PollEvent(&e) != 0) {
 		if (e.type == SDL_KEYDOWN) {	
@@ -40,9 +54,22 @@ int SDL_Handle_Input(SDL_Event e, Game_Objcet* objcet) {
 				    case SDLK_q:
 					    return 0; 
 					    break;
-				     case SDLK_d:
-					    movement(objcet, DOWN , 10);  
+				     case SDLK_w:
+					    movement(objcet1, -1 , 100);  
 					    break; 
+
+				     case SDLK_s:
+					    movement(objcet1, 1 ,100);  
+					    break; 
+				
+				     case SDLK_i:
+					    movement(objcet2, -1 , 100);  
+					    break; 
+
+				     case SDLK_k:
+					    movement(objcet2, 1 ,100);  
+					    break; 
+
 		  	}
 		}
 		else if (e.type == SDL_QUIT) {
