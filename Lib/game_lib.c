@@ -1,4 +1,4 @@
-#include "game_lib.h"
+#include "Include/game_lib.h"
 #include <math.h>
 
 #define WINDOW_W 600 

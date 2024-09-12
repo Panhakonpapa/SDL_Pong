@@ -1,8 +1,7 @@
-#include "game_lib.h"
-#include "sdl_component.h" 
+#include "Lib/Include/game_lib.h"
+#include "Lib/Include/sdl_component.h" 
 #include <SDL2/SDL_mixer.h>
-#define UNIX_FONT_PATH "/home/panha/build/PONG_MINI/class/SDL-Pong/fonts_ttf/8bitOperatorPlus-Bold.ttf" 
-#define UNIX_SOUND_PATH 
+
 void play_sound(char *file) {
     Mix_Chunk *soundEffect = Mix_LoadWAV(file);
     
@@ -47,7 +46,7 @@ int main() {
 		exit(EXIT_FAILURE); 
 	}
 	/* Open ttf fonts */
-	TTF_Font* openFont = TTF_OpenFont(UNIX_FONT_PATH, 32);
+	TTF_Font* openFont = TTF_OpenFont("~/SDL-Pong/fonts_ttf/8bitOperatorPlus-Bold.ttf", 32);
 	if (!openFont) {
 	        printf("Font can't load\n");	
 		exit(EXIT_FAILURE); 
@@ -78,7 +77,7 @@ int main() {
 
 		/* Collsion detection */	
 		if (Collision(&player_1, &Ball) || Collision(&player_2, &Ball)) {
-			play_sound("/home/panha/Downloads/8-bit-game-2-186976.wav"); 
+			play_sound("~/SDL-Pong/sound/8-bit-game-2-186976.wav"); 
 			angle = 180.f - angle; 
 		}
 		/* Update function */	

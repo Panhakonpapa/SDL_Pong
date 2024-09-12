@@ -1,4 +1,4 @@
-#include "sdl_component.h"
+#include "Include/sdl_component.h"
 void print_debug(char* stringErrorMessages)
 {	
 	printf("Error ->%s -> results output %s", stringErrorMessages, SDL_GetError()); 	
