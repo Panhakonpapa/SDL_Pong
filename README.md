@@ -30,7 +30,7 @@ cd SDL-Pong
 ### 🎮 How to Play
 
     Player 1 uses the W and S keys to move the paddle up and down.
-    Player 2 uses the Up Arrow and Down Arrow keys to move their paddle.
+    Player 2 uses the I Arrow and K Down Arrow keys to move their paddle.
     The game starts automatically; the ball bounces between the paddles, and players try to score by getting the ball past their opponent.
 
 ### 📝 Credits
