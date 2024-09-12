@@ -7,7 +7,7 @@ install_dependency="sudo $package_manager $package"
 
 # Install dependencies
 echo "Installing dependencies..."
-$install_dependency
+#$install_dependency
 
 # Compiler and paths
 CC="gcc"
