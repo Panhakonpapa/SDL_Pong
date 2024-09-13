@@ -21,7 +21,7 @@ int main() {
 		exit(EXIT_FAILURE); 
 	}
 
-	if (TTF_Init()) {
+	/*if (TTF_Init()) {
 		printf("TTF Creation Faliure\n"); 
 		exit(EXIT_FAILURE); 
 	}
@@ -32,6 +32,7 @@ int main() {
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
 		exit(EXIT_FAILURE); 
 	}
+	*/
 
 	/* Create Window */
 	SDL_Window* window = SDL_Create_Window("Pong", 900, 600); 
@@ -45,12 +46,13 @@ int main() {
 		printf("Renderer Creation Faliure\n"); 
 		exit(EXIT_FAILURE); 
 	}
-	/* Open ttf fonts */
+	/* Open ttf fonts 
 	TTF_Font* openFont = TTF_OpenFont("~/SDL-Pong/fonts_ttf/8bitOperatorPlus-Bold.ttf", 32);
 	if (!openFont) {
 	        printf("Font can't load\n");	
 		exit(EXIT_FAILURE); 
 	}
+	*/
 
 	/* Main loop flag */
 	int running = 1; 
@@ -77,7 +79,7 @@ int main() {
 
 		/* Collsion detection */	
 		if (Collision(&player_1, &Ball) || Collision(&player_2, &Ball)) {
-			play_sound("~/SDL-Pong/sound/8-bit-game-2-186976.wav"); 
+			//play_sound("~/SDL-Pong/sound/8-bit-game-2-186976.wav"); 
 			angle = 180.f - angle; 
 		}
 		/* Update function */	
@@ -85,7 +87,7 @@ int main() {
 		update_score(&Ball, &p1_point, &p2_point);		
 
 		/* Render ttf on the screen */	
-		SDL_Display_TTF(300, 10, 300, 100, openFont, renderer, &p1_point, &p2_point); 
+		//SDL_Display_TTF(300, 10, 300, 100, openFont, renderer, &p1_point, &p2_point); 
 
 		/* Draw funciton */
 		SDL_Draw_Rect(player_1.sdl_rect.x, player_1.sdl_rect.y, player_1.sdl_rect.w, player_1.sdl_rect.h, renderer); 	
@@ -99,6 +101,6 @@ int main() {
 	SDL_DestroyWindow(window); 
 	SDL_DestroyRenderer(renderer); 
 	TTF_Quit();
-	TTF_CloseFont(openFont);
-	Mix_CloseAudio();
+	//TTF_CloseFont(openFont);
+	//Mix_CloseAudio();
 }
